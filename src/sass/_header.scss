@@ -1,0 +1,272 @@
+@import './mixin';
+.header__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @include respond-to('tablet') {
+    align-items: baseline;
+    justify-content: start;
+  }
+}
+
+.logo {
+  color: $color-secondary;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-xl;
+    margin-right: 48px;
+  }
+
+  @include respond-to('desktop') {
+    font-size: $font-size-logo;
+    margin-right: 102px;
+  }
+}
+
+.nav {
+  display: none;
+
+  @include respond-to('tablet') {
+    display: block;
+  }
+}
+.nav__list {
+  @include respond-to('tablet') {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 44px;
+    margin-right: 32px;
+  }
+
+  @include respond-to('desktop') {
+    gap: 69px;
+    margin-right: 147px;
+  }
+}
+
+.nav__link {
+  @include respond-to('tablet') {
+    color: $color-secondary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+    padding-bottom: 8px;
+
+    &--current-home {
+      &:hover,
+      &:focus {
+        &::after {
+          content: '';
+          width: 56px;
+          height: 1px;
+          background-color: $text-brand;
+          left: 0px;
+          right: 225px;
+          bottom: 0;
+          position: absolute;
+        }
+      }
+    }
+    &--current-favorite {
+      &:hover,
+      &:focus {
+        &::after {
+          content: '';
+          width: 69px;
+          height: 1px;
+          background-color: $text-brand;
+          left: 0px;
+          right: 225px;
+          bottom: 0;
+          position: absolute;
+        }
+      }
+    }
+    &--current-read {
+      &:hover,
+      &:focus {
+        &::after {
+          content: '';
+          width: 45px;
+          height: 1px;
+          background-color: $text-brand;
+          left: 0px;
+          right: 225px;
+          bottom: 0;
+          position: absolute;
+        }
+      }
+    }
+  }
+  @include respond-to('desktop') {
+    font-size: $font-size-l;
+  }
+}
+.search {
+  position: relative;
+  display: none;
+
+  @include respond-to('tablet') {
+    display: block;
+  }
+}
+
+.search-switch {
+  @include respond-to('tablet') {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+  @include respond-to('desktop') {
+    gap: 147px;
+    align-items: flex-start;
+  }
+}
+
+.search__input {
+  width: 173px;
+  height: 31px;
+  border: 1px solid $color-secondary;
+  border-radius: 20px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: $font-size-s;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  padding-left: 48px;
+  // opacity: 0.4;
+
+  @include respond-to('tablet') {
+    width: 213px;
+  }
+
+  @include respond-to('desktop') {
+    width: 288px;
+  }
+}
+
+.search__icon-input {
+  position: absolute;
+  left: 12px;
+  bottom: 6px;
+}
+
+.mob-search-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+
+.btn-search-mob {
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: $color-primary-light;
+  cursor: pointer;
+}
+
+.search-icon {
+  fill: $color-secondary;
+}
+
+.btn-menu-burger {
+  min-width: 24px;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: $color-primary-light;
+  cursor: pointer;
+}
+
+.switch {
+  display: none;
+
+  @include respond-to('tablet') {
+    display: block;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+  }
+  @include respond-to('desktop') {
+    gap: 12px;
+  }
+}
+
+.switch__checkbox {
+  @include respond-to('tablet') {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border: 0.604701px solid $toggle-switches;
+    border-radius: 20px;
+    background-color: $color-tertiary;
+  }
+}
+
+.switch__slider {
+  @include respond-to('tablet') {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 1px;
+    top: 2px;
+    border-radius: 20px;
+    background-color: $toggle-switches;
+  }
+}
+
+.switch__sun {
+  @include respond-to('tablet') {
+    fill: $color-primary-light;
+    stroke: #5f6775;
+  }
+  @include respond-to('desktop') {
+    display: none;
+  }
+}
+.switch__moon {
+  @include respond-to('tablet') {
+    fill: $color-primary-light;
+    stroke: #5f6775;
+  }
+  @include respond-to('desktop') {
+    display: none;
+  }
+}
+
+.switch__text {
+  @include respond-to('tablet') {
+    display: none;
+  }
+  @include respond-to('desktop') {
+    display: block;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: $font-size-l;
+    line-height: 1.3;
+    color: #5f6775;
+  }
+}
